@@ -5,7 +5,7 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from sqlalchemy import pool
 from alembic import context
 from dotenv import load_dotenv
-from models.bd_config import Base
+from models.db_config import Base
 
 load_dotenv()
 

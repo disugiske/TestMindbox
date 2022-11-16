@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import relationship
 
-from models.bd_config import Base
+from models.db_config import Base
 
 association_table = Table(
     "association_table",

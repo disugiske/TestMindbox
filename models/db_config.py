@@ -12,7 +12,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 
 engine = create_async_engine(
     url=os.getenv('SQLALCHEMY_DB_URI'),
-    echo=True
+    echo=False
 )
 Base = declarative_base(bind=engine)
 async_session = sessionmaker(bind=engine, expire_on_commit=False, class_=AsyncSession)

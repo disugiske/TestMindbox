@@ -1,1 +1,1 @@
-from .general import Products, Category, association_table
+from .main_db import Products, Category, association_table
