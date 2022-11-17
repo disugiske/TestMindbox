@@ -21,10 +21,11 @@ product_id = [1, 1, 1, 12, 2, 3, 45, 6, 8, 3, 56, 7, 3]
 data = {"customer_id": userid, "product_id": product_id, "timestamp": times, }
 frame = df(data)
 
+
 def main():
     frame["timestamp"] = pd.to_datetime(frame["timestamp"])
-    f = lambda t: t.diff().gt(pd.Timedelta('3min')).cumsum()
-    frame['session_id'] = frame.groupby(['customer_id'], group_keys=False)['timestamp'].apply(f)
+    format = lambda t: t.diff().gt(pd.Timedelta('3min')).cumsum()
+    frame['session_id'] = frame.groupby(['customer_id'], group_keys=False)['timestamp'].apply(format)
     frame['session_id'] = frame.groupby(['customer_id', 'session_id']).ngroup() + 1
     print(frame)
 
