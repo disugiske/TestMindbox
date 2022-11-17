@@ -21,7 +21,7 @@ services:
 
   web:
     build: .
-    command: gunicorn --access-logfile -k uvicorn.workers.UvicornWorker --workers 3 --bind 0.0.0.0:8000 main:app
+    command: gunicorn --access-logfile - -k uvicorn.workers.UvicornWorker --workers 3 --bind 0.0.0.0:8000 main:app
     ports:
       - "8000:8000"
     volumes:
